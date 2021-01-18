@@ -1,6 +1,7 @@
 # How to Install
+Please follow the following instructions to install and run the project
 
-## Clone the repository
+### Clone the repository
 git clone https://github.com/GROUP16CS335/SHAMBA-MARKET.git
 
 Switch to the repo folder
@@ -12,7 +13,14 @@ Install all the dependencies using composer
 ```
     composer install
 ```
-
+Install node modules
+```
+    npm install
+```
+Install bootstrap
+```
+    npm install bootstrap
+```
 Copy the example env file and make the required configuration changes in the .env file
 ```
     cp .env.example .env
