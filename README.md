@@ -2,7 +2,9 @@
 Please follow the following instructions to install and run the project
 
 ### Clone the repository
+```
 git clone https://github.com/GROUP16CS335/SHAMBA-MARKET.git
+```
 
 Switch to the repo folder
 ```
