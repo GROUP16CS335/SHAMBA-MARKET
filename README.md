@@ -18,7 +18,7 @@ git clone https://github.com/GROUP16CS335/SHAMBA-MARKET.git
 
 Switch to the repo folder
 ```
-cd shambaMarket
+cd SHAMBAMARKET
 ```
 
 Install all the dependencies using composer
