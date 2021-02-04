@@ -23,6 +23,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/contact', function(){
+    return view('frontend.contact');
+});
+
 
 Route::group(['middleware' => ['auth', 'isAdmin']],function(){
     Route::get('/admin', function () {
