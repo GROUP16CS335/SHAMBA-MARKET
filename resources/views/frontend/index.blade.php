@@ -12,7 +12,7 @@
 
             <!--Card image-->
             <div class="view overlay">
-            <img src="{{$product->image}}" class="card-img-top" alt="">
+            <img src="{{asset('storage/productImages/'.$product->image)}}" class="card-img-top" alt="">
                 <a>
                 <div class="mask rgba-white-slight"></div>
                 </a>
@@ -23,13 +23,7 @@
                 <a href="" class="grey-text">
                 <h5>{{$product->pname}}</h5>
                 </a>
-                <h5>
-                <strong>
-                    <a href="" class="dark-grey-text">{{$product->pcat}}
-                    <span class="badge badge-pill danger-color">NEW</span>
-                    </a>
-                </strong>
-                </h5>
+
 
                 <h4 class="font-weight-bold blue-text">
                 <strong>{{$product->price}} Tsh</strong>

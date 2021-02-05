@@ -49,15 +49,15 @@
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Products<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Products<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Support</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Delivery Information</a>
-            <a class="dropdown-item" href="#">Privacy Policy</a>
-            <a class="dropdown-item" href="#">Terms & Conditions</a>
+            <a class="dropdown-item" href="/delivery-information">Delivery Information</a>
+            <a class="dropdown-item" href="/privacy-policy">Privacy Policy</a>
+            <a class="dropdown-item" href="/terms&conditions">Terms & Conditions</a>
           </div>
         </li>
         <li class="nav-item">

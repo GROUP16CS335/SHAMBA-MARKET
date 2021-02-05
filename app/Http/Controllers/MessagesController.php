@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use App\Models\User;
+use App\Models\Messages;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class MessagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('vendor.products.index')->with('products', $products);
+        return view('frontend.contact');
     }
 
     /**
@@ -38,34 +36,24 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'pname'=>'required',
-            'pcategory'=>'required',
-            'desc'=>'required',
-            'price'=>'required',
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'service'=>'required',
+            'message'=>'required'
         ]);
 
-        if($request->hasFile('image')){
-            $request->validate([
-                'image'=>'mimes:jpg,png,bmp'
-            ]);
+        $message = new Messages;
+        $message->user_id=auth()->user()->id;
+        $message->name = $request -> input('name');
+        $message->email = $request -> input('email');
+        $message->phone = $request -> input('phone');
+        $message->service = $request -> input('service');
+        $message->message = $request -> input('message');
 
-            $pimage = request()->file('image');
-            $imageName = time().rand(0,9).'.'.$pimage->getClientOriginalExtension();
-            //$destination = storage_path('public/productImages');
-            $pimage->storeAs('public/productImages', $imageName);
-        }
+        $message->save();
 
-        $product = new Product;
-        $product->vid=auth()->user()->id;
-        $product->pname = $request -> input('pname');
-        $product->pcat = $request -> input('pcategory');
-        $product->desc = $request -> input('desc');
-        $product->price = $request -> input('price');
-        $product->image = $imageName;
-
-        $product->save();
-
-        return redirect('/products')->with('message', 'Product added successfully');
+        return redirect('/contact')->with('message', 'Message sent successfully');
     }
 
     /**
@@ -76,8 +64,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $products = User::find($id);
-        return view('vendor.products.index')->with('products', $products);
+
     }
 
     /**
