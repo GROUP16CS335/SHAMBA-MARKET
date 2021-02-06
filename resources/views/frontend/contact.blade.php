@@ -1,5 +1,4 @@
 @extends('layouts.frontend')
-
 @section('content')
 <br>
 <div class="contact3 py-5">
@@ -12,7 +11,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="contact-box ml-3">
+            <div class="contact-box ml-3 contact-form">
               <h1 class="font-weight-light mt-2">Contact Shamba-Market</h1>
               <form class="mt-4" method="POST">
                {{@csrf_field()}}
