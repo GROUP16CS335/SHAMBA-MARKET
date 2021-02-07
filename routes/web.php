@@ -43,6 +43,17 @@ Route::group(['middleware' => ['auth', 'isVendor']],function(){
     });
 
     Route::resource('/products', ProductsController::class);
+    Route::get('/deliveryInf', function () {
+        return view('frontend.support.deliveryInf');
+    });
+
+    Route::get('/privacyPolicy', function () {
+        return view('frontend.support.privacyPolicy');
+    });
+
+    Route::get('/termsCondition', function () {
+        return view('frontend.support.termsCondition');
+    });
 
     Route::get('/add-products', function () {
         return view('vendor.products.add');
