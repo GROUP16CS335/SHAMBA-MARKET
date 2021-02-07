@@ -9,7 +9,7 @@
                 <div class="card-header"><h1><strong>{{ __('Register') }}</strong></h1></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" class="needs-validation" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
