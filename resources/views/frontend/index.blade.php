@@ -1,52 +1,51 @@
+
+
 @extends('layouts.frontend')
-
 @section('content')
+@include('layouts.inc.slider')
 <br>
-    <div class="container py-4">
-       <div class="row">
-           @foreach ($products as $product )
-           <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
-
-            <!--Card image-->
-            <div class="view overlay">
-            <img src="{{$product->image}}" class="card-img-top" alt="">
-                <a>
-                <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!--Card image-->
-            <div class="card-body text-center">
-                <!--Category & Title-->
-                <a href="" class="grey-text">
-                <h5>{{$product->pname}}</h5>
-                </a>
-                <h5>
-                <strong>
-                    <a href="" class="dark-grey-text">{{$product->pcat}}
-                    <span class="badge badge-pill danger-color">NEW</span>
-                    </a>
-                </strong>
-                </h5>
-
-                <h4 class="font-weight-bold blue-text">
-                <strong>{{$product->price}} Tsh</strong>
-                </h4>
-
-            </div>
-            <!--Card content-->
-
-            </div>
-            <!--Card-->
-
-            </div>
-            <!--Grid column-->
-            @endforeach
-       </div>
-
-           <!--Grid column-->
-
+<div class="row">
+    <div class="col-lg-12">
+        <div class="title-all text-center">
+            <h1>PRODUCTS</h1>
+        </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="special-menu text-center">
+            <div class="button-group filter-button-group">
+                <button class="active" data-filter="*">All</button>
+                <button data-filter=".top-featured">Vegetables</button>
+                <button data-filter=".best-seller">Fruits</button>
+            </div>
+        </div>
+    </div>
+</div>  
+<div class="container py-4">
+    <div class="row">
+        @foreach ($products as $product )
+        <div class="col-lg-3 col-md-6 special-grid top-featured ">
+            <div class="products-single fix">
+                <div class="box-img-hover">
+                    <div class="type-lb">
+                        <p class="new">New</p>
+                    </div>
+                    <img src="{{asset('storage/productImages/'.$product->image)}}" class="img-fluid" alt="Image">
+                    <div class="mask-icon">
+                        <a class="cart" href="#">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="why-text">
+                    <h4>{{$product->pname}}</h4>
+                    <h5> {{$product->price}} Tsh</h5>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+
+        <!--Grid column-->
+
+</div>
 @endsection

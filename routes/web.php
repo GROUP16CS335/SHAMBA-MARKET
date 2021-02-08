@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\MainViewController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -23,10 +26,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/contact', function(){
-    return view('frontend.contact');
-});
+Route::resource('/contact', MessagesController::class);
 
+Route::resource('/cart', CartController::class);
+
+Route::resource('/checkout', CheckoutController::class);
+
+//Route::get('/add-to-cart/{id}',[App\Http\Controllers\DemoController::class, 'index']);
 
 Route::group(['middleware' => ['auth', 'isAdmin']],function(){
     Route::get('/admin', function () {

@@ -1,5 +1,4 @@
 @extends('layouts.frontend')
-
 @section('content')
 <br>
 <div class="contact3 py-5">
@@ -12,28 +11,38 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="contact-box ml-3">
+            <div class="contact-box ml-3 contact-form">
               <h1 class="font-weight-light mt-2">Contact Shamba-Market</h1>
-              <form class="mt-4">
+              <form class="mt-4" method="POST">
+               {{@csrf_field()}}
+               @method('POST')
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="form-group mt-2">
-                      <input class="form-control" type="text" placeholder="name">
+                      <input class="form-control" type="text" name="name" placeholder="name">
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="form-group mt-2">
-                      <input class="form-control" type="email" placeholder="email address">
+                      <input class="form-control" type="email" name="email" placeholder="email address">
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="form-group mt-2">
-                      <input class="form-control" type="text" placeholder="phone">
+                      <input class="form-control" type="text" name="phone" placeholder="phone">
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="form-group mt-2">
-                      <textarea class="form-control" rows="3" placeholder="message"></textarea>
+                     <select name="service" id="" class="form-control">
+                         <option value="">--Select service---</option>
+                         <option value="vendor">Vendor</option>
+                     </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group mt-2">
+                      <textarea class="form-control" rows="3" name="message" placeholder="message"></textarea>
                     </div>
                   </div>
                   <div class="col-lg-12">

@@ -16,6 +16,8 @@
 
     <link href="{{ asset('css/custom_admin.css') }}" rel="stylesheet">
 
+    
+
 </head>
 <body>
     <!-- Main Navigation -->
@@ -28,7 +30,6 @@
     <main class="pt-5 mx-lg-5">
         @yield('content')
     </main>
-    @include('layouts.inc.footer')
 </body>
 <script type="text/javascript" src="{{ asset('js/custom.js')}}"></script>
 

@@ -1,0 +1,2 @@
+[2021-02-07 15:07:01.846] [sharedprocess] [info] main {"machineId":"a64de50bdff5e4724ea14450f9dae25fae8773e095d94df66e445d740c62c6c6","windowId":2}
+[2021-02-07 15:07:09.039] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/angelothomas/MyProjects/Laravel/shambaMarket/angelothomas/User/snippets'

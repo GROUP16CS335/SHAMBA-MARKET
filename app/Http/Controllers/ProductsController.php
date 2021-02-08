@@ -48,6 +48,11 @@ class ProductsController extends Controller
             $request->validate([
                 'image'=>'mimes:jpg,png,bmp'
             ]);
+
+            $pimage = request()->file('image');
+            $imageName = time().rand(0,9).'.'.$pimage->getClientOriginalExtension();
+            //$destination = storage_path('public/productImages');
+            $pimage->storeAs('public/productImages', $imageName);
         }
 
         $product = new Product;
@@ -56,11 +61,7 @@ class ProductsController extends Controller
         $product->pcat = $request -> input('pcategory');
         $product->desc = $request -> input('desc');
         $product->price = $request -> input('price');
-        $product->image = $request->image->hashName();
-
-        // Save the file locally in the storage/public/ folder under a new folder named /product
-
-        $request->file('image')->storeAs('pimages', 'app/public');
+        $product->image = $imageName;
 
         $product->save();
 
@@ -111,5 +112,9 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getAddToCart(Request $request, $id){
+        $product = Product::find($id);
     }
 }
