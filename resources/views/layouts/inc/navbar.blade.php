@@ -54,8 +54,33 @@
     </div>
     <!-- /.navbar-collapse -->
 
+<<<<<<< HEAD
+<nav class="navbar navbar-expand navbar-light bg-light sub-menu">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Products<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Support</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/deliveryInf">Delivery Information</a>
+            <a class="dropdown-item" href="/privacyPolicy">Privacy Policy</a>
+            <a class="dropdown-item" href="/termsCondition">Terms & Conditions</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+=======
     <!-- End Atribute Navigation -->
 </div>
+>>>>>>> c3df8bfc602104c78f157e0eddcc6ebf41cdae0c
 </nav>
 <!-- End Navigation -->
 
