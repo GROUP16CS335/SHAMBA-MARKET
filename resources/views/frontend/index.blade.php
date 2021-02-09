@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-</div>  
+</div>
 <div class="container py-4">
     <div class="row">
         @foreach ($products as $product )
@@ -33,7 +33,7 @@
                     </div>
                     <img src="{{asset('storage/productImages/'.$product->image)}}" class="img-fluid" alt="Image">
                     <div class="mask-icon">
-                        <a class="cart" href="#">Add to Cart</a>
+                        <a class="cart" href="{{url('add-to-cart', ['id'=>$product->id])}}">Add to Cart</a>
                     </div>
                 </div>
                 <div class="why-text">

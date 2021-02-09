@@ -7,6 +7,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-main table-responsive">
+                        @if (Session::has('cart'))
                         <table class="table">
                             <thead>
                                 <tr>
@@ -18,81 +19,39 @@
                                     <th>Remove</th>
                                 </tr>
                             </thead>
+                            @foreach ($products as $product)
                             <tbody>
                                 <tr>
                                     <td class="thumbnail-img">
                                         <a href="#">
-									<img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-								</a>
+                                        <img class="img-fluid" src="{{asset('storage/productImages/'.$product['item']->image)}}" alt="" />
+                                        </a>
                                     </td>
                                     <td class="name-pr">
                                         <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
+                                            {{$product['item']->pname}}
+                                        </a>
                                     </td>
                                     <td class="price-pr">
-                                        <p>$ 80.0</p>
+                                        <p>{{$product['item']->price}}</p>
                                     </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+                                    <td class="quantity-box"><input type="number" size="4" value="{{$product['qty']}}" min="0" step="1" class="c-input-text qty text"></td>
                                     <td class="total-pr">
-                                        <p>$ 80.0</p>
+                                        <p>{{$product['price']}}</p>
                                     </td>
                                     <td class="remove-pr">
                                         <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 60.0</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 30.0</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
+                                        <i class="fas fa-times"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>
+                            @endforeach
                         </table>
+                        @else
+
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -103,29 +62,29 @@
                         <h3>Order summary</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> $ 130 </div>
+                            <div class="ml-auto font-weight-bold">{{$totalPrice}} /=</div>
                         </div>
                         <div class="d-flex">
                             <h4>Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $ 40 </div>
+                            <div class="ml-auto font-weight-bold"> Tsh 0 </div>
                         </div>
                         <hr class="my-1">
                         <div class="d-flex">
                             <h4>Coupon Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $ 10 </div>
+                            <div class="ml-auto font-weight-bold"> Tsh 0 </div>
                         </div>
                         <div class="d-flex">
                             <h4>Tax</h4>
-                            <div class="ml-auto font-weight-bold"> $ 2 </div>
+                            <div class="ml-auto font-weight-bold"> Tsh 0 </div>
                         </div>
                         <div class="d-flex">
-                            <h4>Shipping Cost</h4>
+                            <h4>Delivery Cost</h4>
                             <div class="ml-auto font-weight-bold"> Free </div>
                         </div>
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Grand Total</h5>
-                            <div class="ml-auto h5"> $ 388 </div>
+                            <div class="ml-auto h5"> {{$totalPrice}} /=</div>
                         </div>
                         <hr> </div>
                 </div>
