@@ -20,7 +20,7 @@
 <body>
     <!-- Main Navigation -->
     <header>
-        @include('layouts.inc.admin-navbar')
+        @include('layouts.inc.vendor-navbar')
         @include('layouts.inc.vendor-sidebar')
     </header>
    <!--Main Navigation-->
