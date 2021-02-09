@@ -68,7 +68,7 @@
                         </div>
                     </form>
                     <hr>
-                    <center><a href="/register">Don't have an account? Register</a></center>
+                    <center><a href="/register">You don't have an account? Register</a></center>
                 </div>
             </div>
         </div>
