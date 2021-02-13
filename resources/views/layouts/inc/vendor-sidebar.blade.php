@@ -14,9 +14,6 @@
 
     <a href="#" class="list-group-item list-group-item-action waves-effect">
         <i class="fa fa-user mr-3"></i>Profile</a>
-
-    <a href="/logout" class="list-group-item list-group-item-action waves-effect">
-        <i class="fa fa-sign-out mr-3"></i>Logout</a>
 </div>
 
 </div>

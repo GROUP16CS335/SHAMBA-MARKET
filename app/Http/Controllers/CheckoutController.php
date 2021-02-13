@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderDetails;
+use App\Models\User;
+use App\Models\Product;
 
 class CheckoutController extends Controller
 {
@@ -13,7 +19,10 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        return view('frontend.checkout');
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('frontend.checkout', ['products'=>$cart->items, 'totalPrice'=>$cart->totalPrice]);
     }
 
     /**
@@ -34,7 +43,21 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $orderDetail = new OrderDetails;
+        $orderDetail->user_id=auth()->user()->id;
+        $orderDetail->firstname = $request -> input('fname');
+        $orderDetail->lastname = $request -> input('lname');
+        $orderDetail->email = $request -> input('email');
+        $orderDetail->phone = $request -> input('phone');
+        $orderDetail->address1 = $request -> input('address1');
+        $orderDetail->address2 = $request -> input('address2');
+        $orderDetail->country = $request -> input('country');
+        $orderDetail->region = $request -> input('region');
+        $orderDetail->district = $request -> input('district');
+        $orderDetail->pay_method = $request -> input('pay_method');
+
+        $orderDetail->save();
     }
 
     /**
