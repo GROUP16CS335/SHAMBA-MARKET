@@ -13,4 +13,8 @@ class Order extends Model
 
         return $this->hasMany(OrderDetails::class);
     }
+
+    public function order_price(){
+        return $this->hasOne(OrderPrices::class);
+    }
 }

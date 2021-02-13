@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class OrderPrices extends Model
 {
     use HasFactory;
+
+    public function order_price(){
+        return $this->hasOne(OrderPrices::class);
+    }
 }
