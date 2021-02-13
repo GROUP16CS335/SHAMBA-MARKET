@@ -43,7 +43,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $orderDetail = new OrderDetails;
         $orderDetail->user_id=auth()->user()->id;
         $orderDetail->firstname = $request -> input('fname');
@@ -55,9 +55,24 @@ class CheckoutController extends Controller
         $orderDetail->country = $request -> input('country');
         $orderDetail->region = $request -> input('region');
         $orderDetail->district = $request -> input('district');
-        $orderDetail->pay_method = $request -> input('pay_method');
-
+        $orderDetail->pay_method = $request -> input('paymentMethod');
         $orderDetail->save();
+
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        if (Session::has('cart')) {
+            foreach ($cart->items as $product) {
+                $order = new Order;
+                $order->user_id = auth()->user()->id;
+                $order.implode($product)->item = $request-> $product['item']->pname;
+                $order->item = $request-> $product['item']->price;
+                $order->save();
+            }
+        }
+
+
+        return redirect('/')->with('status', 'Your order has been received, you will be contacted shortly');
     }
 
     /**
