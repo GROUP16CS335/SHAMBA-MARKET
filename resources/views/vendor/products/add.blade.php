@@ -31,7 +31,7 @@
                         <div class="form-row">
                             <div class="form-group  col-md-4">
                                 <label for="desc">Descriptions</label>
-                                <input type="text" name="desc" class="form-control" id="" placeholder="Product Descrption...">
+                                <input type="text" name="desc" class="form-control" id="" placeholder="Include units example 1@killo....">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="price">Price</label>

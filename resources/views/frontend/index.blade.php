@@ -38,6 +38,7 @@
                 </div>
                 <div class="why-text">
                     <h4>{{$product->pname}}</h4>
+                    <p>{{$product->desc}}</p>
                     <h5> {{number_format($product->price)}} Tsh</h5>
                 </div>
             </div>

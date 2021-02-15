@@ -87,6 +87,7 @@ class CheckoutController extends Controller
                     $order->user_id = auth()->user()->id;
                     $order->item_id =  $product['item']->id;
                     $order->price =  $product['item']->price ;
+                    $order -> qty = $product['qty'];
                     $order->save();
                 }
 
@@ -96,9 +97,11 @@ class CheckoutController extends Controller
                 //$order_price->grand_total = $cart->totalPrice;
                 //$order_price->save();
             }
+
+            Session::forget('cart');
+            return redirect('/home')->with('status', 'Your order has been received, you will be contacted shortly');
         }
 
-        return redirect('/')->with('status', 'Your order has been received, you will be contacted shortly');
     }
 
     /**
