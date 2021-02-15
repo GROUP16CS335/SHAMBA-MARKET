@@ -26,7 +26,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="email">Email Address *</label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="" required>
                                 <div class="invalid-feedback"> Please enter a valid email address for delivery updates. </div>
                             </div>
                             <div class="mb-3">
@@ -40,7 +40,7 @@
                                 <div class="invalid-feedback"> Please enter your shipping address. </div>
                             </div>
                             <div class="mb-3">
-                                <label for="address2">Address 2 *</label>
+                                <label for="address2">Street *</label>
                                 <input type="text" name="address2" class="form-control" id="address2" placeholder=""> </div>
                             <div class="row">
                                 <div class="col-md-5 mb-3">
