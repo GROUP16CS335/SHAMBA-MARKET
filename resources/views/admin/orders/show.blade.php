@@ -7,6 +7,25 @@
             <h3>Product Details</h3>
             <hr>
             <div class="form-row">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <th>VendorID</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </thead>
+                    <tbody>
+
+                            <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                    </tbody>
+                </table>
                 <div class="form-group  col-md-4">
 
                 </div>
