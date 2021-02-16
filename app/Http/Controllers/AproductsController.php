@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Product;
 
-class UsersController extends Controller
+class AproductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('admin.users.index')->with('users', $users);
+        $products = Product::all();
+        return view('admin.products.index')->with('products', $products);
     }
 
     /**
@@ -47,8 +47,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        return view('admin.users.edit')->with('user', $user);
+        $product = Product::find($id);
+        return view('admin.products.edit')->with('product', $product);
     }
 
     /**
@@ -59,8 +59,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-         $user = User::find($id);
-         return view('admin.users.edit')->with('user', $user);
+        $product = Product::find($id);
+        return view('admin.products.edit')->with('product', $product);
     }
 
     /**
@@ -72,14 +72,14 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->role_as = $request->input('roles');
+        $product = Product::find($id);
+        $product->pname = $request->input('pname');
+        $product->pcat = $request->input('pcategory');
+        $product->desc = $request->input('desc');
+        $product->price = $request->input('price');
+        $product->save();
 
-        $user->save();
-
-        return redirect('/users')->with('status', 'Role updated');
+        return redirect('/a-products')->with('status', 'Product updated');
     }
 
     /**
@@ -90,22 +90,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-
-        $user = User::find($id);
-        $user->delete();
-        return redirect('/users')->with('status', 'User deleted');
+        $product = Product::find($id);
+        $product->delete();
+        return redirect('/a-products')->with('status', 'Product deleted');
     }
-
-    public function vendorProfile($id)
-    {
-        $id = auth()->user()->id;
-        $user = User::find($id)->where('id', $id);
-        return view('vendor.profile')->with('user', $user);
-    }
-
-    /*public function adminProfile($id)
-    {
-        $user = User::find($id)->where('id', auth()->user()->id);
-        return view('vendor.profile')->with('user', $user);
-    }*/
 }

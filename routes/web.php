@@ -5,8 +5,11 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AproductsController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\MainViewController;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\AordersController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,6 +45,13 @@ Route::group(['middleware' => ['auth', 'isAdmin']],function(){
 
     Route::resource('/users', UsersController::class);
 
+    Route::resource('/a-products', AproductsController::class);
+
+    Route::resource('/a-orders', AordersController::class);
+
+    Route::get('/admin-profile', [App\Http\Controllers\UsersController::class, 'adminProfile'])->name('admin-profile');
+
+
 });
 
 Route::group(['middleware' => ['auth', 'isVendor']],function(){
@@ -49,7 +59,10 @@ Route::group(['middleware' => ['auth', 'isVendor']],function(){
         return view('vendor.dashboard');
     });
 
+    Route::get('/vendor-profile', [App\Http\Controllers\UsersController::class, 'vendorProfile']);
+
     Route::resource('/products', ProductsController::class);
+
     Route::get('/deliveryInf', function () {
         return view('frontend.support.deliveryInf');
     });
