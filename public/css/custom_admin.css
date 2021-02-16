@@ -176,3 +176,6 @@ body{
   width:100%;
   position:absolute;
   }
+.btn-primary{
+    background-color: rgb(5, 131, 43) !important;
+}

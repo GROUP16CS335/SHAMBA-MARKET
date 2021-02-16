@@ -33,11 +33,11 @@
                                         </a>
                                     </td>
                                     <td class="price-pr">
-                                        <p>{{$product['item']->price}}</p>
+                                        <p>{{number_format($product['item']->price) }} Tsh</p>
                                     </td>
                                     <td class="quantity-box"><input type="number" size="4" value="{{$product['qty']}}" min="0" step="1" class="c-input-text qty text"></td>
                                     <td class="total-pr">
-                                        <p>{{$product['price']}}</p>
+                                        <p>{{number_format($product['price']) }} Tsh</p>
                                     </td>
                                     <td class="remove-pr">
                                         <a href="#">
@@ -62,20 +62,24 @@
                         <h3>Order summary</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
+<<<<<<< HEAD
                             <div class="ml-auto font-weight-bold">{{$totalPrice ?? ''}} /=</div>
+=======
+                            <div class="ml-auto font-weight-bold">{{number_format($totalPrice)}} Tsh</div>
+>>>>>>> d7cec551e147d82741316737ba5471bf8cccdb58
                         </div>
                         <div class="d-flex">
                             <h4>Discount</h4>
-                            <div class="ml-auto font-weight-bold"> Tsh 0 </div>
+                            <div class="ml-auto font-weight-bold"> 0 Tsh</div>
                         </div>
                         <hr class="my-1">
                         <div class="d-flex">
                             <h4>Coupon Discount</h4>
-                            <div class="ml-auto font-weight-bold"> Tsh 0 </div>
+                            <div class="ml-auto font-weight-bold"> 0 Tsh</div>
                         </div>
                         <div class="d-flex">
                             <h4>Tax</h4>
-                            <div class="ml-auto font-weight-bold"> Tsh 0 </div>
+                            <div class="ml-auto font-weight-bold"> 0 Tsh </div>
                         </div>
                         <div class="d-flex">
                             <h4>Delivery Cost</h4>
@@ -84,7 +88,11 @@
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Grand Total</h5>
+<<<<<<< HEAD
                             <div class="ml-auto h5"> {{$totalPrice ?? ''}} /=</div>
+=======
+                            <div class="ml-auto h5"> {{number_format($totalPrice)}} /=</div>
+>>>>>>> d7cec551e147d82741316737ba5471bf8cccdb58
                         </div>
                         <hr> </div>
                 </div>

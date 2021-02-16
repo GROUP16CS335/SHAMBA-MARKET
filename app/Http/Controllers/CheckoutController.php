@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderDetails;
+use App\Models\OrderPrices;
+use App\Models\User;
+use App\Models\Product;
 
 class CheckoutController extends Controller
 {
@@ -13,7 +21,10 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        return view('frontend.checkout');
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('frontend.checkout', ['products'=>$cart->items, 'totalPrice'=>$cart->totalPrice]);
     }
 
     /**
@@ -34,7 +45,63 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'fname'=>'required',
+            'lname'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'address1'=>'required',
+            'address2'=>'required',
+            'country'=>'required',
+            'region'=>'required',
+            'district'=>'required',
+            'paymentMethod'=>'required',
+        ]);
+
+        if (Auth::guest()) {
+
+            return redirect('/home')->with('status', 'Please login or register to continue with checkout');
+        }
+        else {
+
+            $orderDetail = new OrderDetails;
+            $orderDetail->user_id=auth()->user()->id;
+            $orderDetail->firstname = $request -> input('fname');
+            $orderDetail->lastname = $request -> input('lname');
+            $orderDetail->email = $request -> input('email');
+            $orderDetail->phone = $request -> input('phone');
+            $orderDetail->address1 = $request -> input('address1');
+            $orderDetail->address2 = $request -> input('address2');
+            $orderDetail->country = $request -> input('country');
+            $orderDetail->region = $request -> input('region');
+            $orderDetail->district = $request -> input('district');
+            $orderDetail->pay_method = $request -> input('paymentMethod');
+            $orderDetail->save();
+
+
+            $oldCart = Session::get('cart');
+            $cart = new Cart($oldCart);
+            if (Session::has('cart')) {
+                foreach ($cart->items as $product) {
+                    $order = new Order;
+                    $order->user_id = auth()->user()->id;
+                    $order->item_id =  $product['item']->id;
+                    $order->price =  $product['item']->price ;
+                    $order -> qty = $product['qty'];
+                    $order->save();
+                }
+
+                //$order_price = new OrderPrices;
+                //$order_price ->user_id = auth()->user()->id;
+                //$order_price->order_id = Order::get('id')->where('user_id', auth()->user()->id);
+                //$order_price->grand_total = $cart->totalPrice;
+                //$order_price->save();
+            }
+
+            Session::forget('cart');
+            return redirect('/home')->with('status', 'Your order has been received, you will be contacted shortly');
+        }
+
     }
 
     /**

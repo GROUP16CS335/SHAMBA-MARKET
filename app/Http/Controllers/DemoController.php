@@ -27,7 +27,7 @@ class DemoController extends Controller
 
     public function getCart(){
         if(!Session::has('cart')){
-            return view('frontend.cart', ['products'=>null]);
+            return redirect('/home')->with('status', 'You have no items, please add items to your cart and proceed');
         }
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);

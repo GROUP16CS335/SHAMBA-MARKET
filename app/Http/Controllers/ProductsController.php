@@ -15,7 +15,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::all()->where('vid', auth()->user()->id);
         return view('vendor.products.index')->with('products', $products);
     }
 
