@@ -90,6 +90,8 @@ class AproductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+        return redirect('/a-products')->with('status', 'Product deleted');
     }
 }

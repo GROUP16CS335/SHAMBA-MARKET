@@ -19,6 +19,7 @@
                         <th>Category</th>
                         <th>Description</th>
                         <th>Price</th>
+                        <th></th>
                         <th>Action</th>
                     </thead>
                     <tbody>
@@ -32,7 +33,13 @@
                             <td>{{$product->price}}</td>
                             <td>
                             <a href="{{ url('a-products/'.$product->id) }}" class="badge badge-pill btn-primary px-3 py-2">EDIT</a>
-                                <a href="" class="badge badge-pill btn-danger px-3 py-2">Delete</a>
+                            </td>
+                            <td>
+                                <form action="{{route('a-products.destroy', $product->id)}}" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">DELETE</button>
+                                </form>
                             </td>
                             </tr>
                         @endforeach
