@@ -9,6 +9,7 @@ use App\Http\Controllers\AproductsController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\MainViewController;
 use App\Http\Controllers\VendorController;
+use App\Http\Controllers\AordersController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
