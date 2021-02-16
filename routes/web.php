@@ -46,6 +46,8 @@ Route::group(['middleware' => ['auth', 'isAdmin']],function(){
 
     Route::resource('/a-products', AproductsController::class);
 
+    Route::resource('/a-orders', AordersController::class);
+
     Route::get('/admin-profile', [App\Http\Controllers\UsersController::class, 'adminProfile'])->name('admin-profile');
 
 
