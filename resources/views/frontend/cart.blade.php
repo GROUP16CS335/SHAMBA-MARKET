@@ -62,7 +62,7 @@
                         <h3>Order summary</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold">{{$totalPrice}} /=</div>
+                            <div class="ml-auto font-weight-bold">{{$totalPrice ?? ''}} /=</div>
                         </div>
                         <div class="d-flex">
                             <h4>Discount</h4>
@@ -84,7 +84,7 @@
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Grand Total</h5>
-                            <div class="ml-auto h5"> {{$totalPrice}} /=</div>
+                            <div class="ml-auto h5"> {{$totalPrice ?? ''}} /=</div>
                         </div>
                         <hr> </div>
                 </div>
