@@ -25,6 +25,6 @@ Designing Phase( Deliverables )
 |  4 |TEUWA, DANNY FADHILI | 2018-04-  |
 |  5 |BUKUKU, RICHARD J | 2018-04-01693 |
 |  6 |THOMAS, ANGELO | 2018-04-  |
-
+|  7 |TIMOTHY, NAVIGATOR M.| 2018-04-02434  |
 
 
