@@ -9,7 +9,7 @@
     <a href="#" class="list-group-item list-group-item-action waves-effect">
         <i class="fa fa-money mr-3"></i>Orders</a>
 
-    <a href="#" class="list-group-item list-group-item-action waves-effect">
+    <a href="{{url('a-products')}}" class="list-group-item list-group-item-action waves-effect">
         <i class="fa fa-table mr-3"></i>Products</a>
 
     <a href="{{url('users')}}" class="list-group-item list-group-item-action waves-effect">

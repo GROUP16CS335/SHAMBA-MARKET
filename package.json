@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "font-awesome": "^4.7.0",
+        "postcss": "^8.1.14",
         "glyphicons": "^0.2.0"
     }
 }
