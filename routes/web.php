@@ -7,6 +7,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\MainViewController;
+use App\Http\Controllers\VendorController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,12 +43,17 @@ Route::group(['middleware' => ['auth', 'isAdmin']],function(){
 
     Route::resource('/users', UsersController::class);
 
+    Route::get('/admin-profile', [App\Http\Controllers\UsersController::class, 'adminProfile'])->name('admin-profile');
+
+
 });
 
 Route::group(['middleware' => ['auth', 'isVendor']],function(){
     Route::get('/vendor', function(){
         return view('vendor.dashboard');
     });
+
+    Route::get('/vendor-profile', [App\Http\Controllers\UsersController::class, 'vendorProfile']);
 
     Route::resource('/products', ProductsController::class);
     Route::get('/deliveryInf', function () {

@@ -1,5 +1,5 @@
- <!-- Start Main Top -->
- <header class="main-header">
+<!-- Start Main Top -->
+<header class="main-header">
     <!-- Start Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-default bootsnav navbar-fixed-top">
     <div class="container">
@@ -20,7 +20,7 @@
                 <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="/cart">
-                        <i class="fa fas-shopping-cart"></i>
+                        <i class="glyphicon glyphicon-chevron-right"></i>
                         <span class="badge badge-danger">
                             {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}
                         </span>

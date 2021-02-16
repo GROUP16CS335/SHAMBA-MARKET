@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class UsersController extends Controller
+class VendorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('admin.users.index')->with('users', $users);
+        $user = User::all()->where('id', auth()->user()->id);
+        return view('vendor.profile')->with('user', $user);
     }
 
     /**
@@ -47,8 +47,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        return view('admin.users.edit')->with('user', $user);
+
     }
 
     /**
@@ -59,8 +58,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-         $user = User::find($id);
-         return view('admin.users.edit')->with('user', $user);
+        //
     }
 
     /**
@@ -72,14 +70,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->role_as = $request->input('roles');
-
-        $user->save();
-
-        return redirect('/users')->with('status', 'Role updated');
+        //
     }
 
     /**
@@ -93,16 +84,15 @@ class UsersController extends Controller
         //
     }
 
-    public function vendorProfile($id)
+    public function vendorProfile()
     {
-        $id = auth()->user()->id;
-        $user = User::find($id)->where('id', $id);
+        $user = User::all()->where('id', auth()->user()->id);
         return view('vendor.profile')->with('user', $user);
     }
 
-    /*public function adminProfile($id)
+    public function adminProfile()
     {
-        $user = User::find($id)->where('id', auth()->user()->id);
+        $user = User::all()->where('id', auth()->user()->id);
         return view('vendor.profile')->with('user', $user);
-    }*/
+    }
 }

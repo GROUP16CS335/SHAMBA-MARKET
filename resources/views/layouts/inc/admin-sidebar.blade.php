@@ -15,7 +15,7 @@
     <a href="{{url('users')}}" class="list-group-item list-group-item-action waves-effect">
         <i class="fa fa-users mr-3"></i>Users</a>
 
-    <a href="#" class="list-group-item list-group-item-action waves-effect">
+    <a href="{{url('admin-profile')}}" class="list-group-item list-group-item-action waves-effect">
         <i class="fa fa-user mr-3"></i>Profile</a>
 </div>
 

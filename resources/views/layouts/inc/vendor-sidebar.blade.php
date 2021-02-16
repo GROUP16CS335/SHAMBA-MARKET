@@ -12,9 +12,8 @@
     <a href="{{url('products')}}" class="list-group-item list-group-item-action waves-effect">
         <i class="fa fa-table mr-3"></i>Products</a>
 
-    <a href="#" class="list-group-item list-group-item-action waves-effect">
+    <a href="{{url('vendor-profile')}}" class="list-group-item list-group-item-action waves-effect">
         <i class="fa fa-user mr-3"></i>Profile</a>
 </div>
-
 </div>
 <!-- Sidebar -->
