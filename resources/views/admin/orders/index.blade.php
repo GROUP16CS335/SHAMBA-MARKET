@@ -17,9 +17,7 @@
                             <thead>
                                 <th>ID</th>
                                 <th>UserID</th>
-                                <th>ItemID</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
+                                <th>Total Price</th>
                                 <th>Action</th>
                             </thead>
                             <tbody>
@@ -27,9 +25,7 @@
                                     <tr>
                                     <td>{{$order->id}}</td>
                                     <td>{{$order->user_id}}</td>
-                                    <td>{{$order->item_id}}</td>
-                                    <td>{{$order->price}}</td>
-                                    <td>{{$order->qty}}</td>
+                                    <td>{{$order->price * $order->qty}}</td>
                                     <td>
                                     <a href="{{ url('a-orders/'.$order->id) }}" class="btn btn-success btn-sm">VIEW</a>
                                     </td>
