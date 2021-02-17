@@ -15,11 +15,11 @@
                         <h4>Orders</h4>
                         <table class="table table-bordered table-striped">
                             <thead>
-                                <th>ID</th>
-                                <th>UserID</th>
-                                <th>Order Items</th>
-                                <th>Total Quantity</th>
-                                <th>Action</th>
+                                <th><strong></th>
+                                <th><strong>UserID</strong></th>
+                                <th><strong>Order Items</strong></th>
+                                <th><strong>Total Price</strong></th>
+                                <th><strong>Action</strong></th>
                             </thead>
                             <tbody>
                                 @foreach ($orders as $order)
@@ -27,7 +27,7 @@
                                     <td>{{$order->id}}</td>
                                     <td>{{$order->user_id}}</td>
                                     <td>
-                                         @foreach($order->product as $product)
+                                         @foreach($order->products as $product)
                                           <span class="badge badge-primary">{{$product->pname}}</span>
                                          @endforeach
 

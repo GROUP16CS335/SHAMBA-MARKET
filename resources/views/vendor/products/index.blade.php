@@ -17,11 +17,11 @@
                         <h4>Your Products</h4>
                         <table class="table table-bordered table-striped">
                             <thead>
-                                <th>ID</th>
-                                <th>ProductName</th>
-                                <th>Category</th>
-                                <th>Description</th>
-                                <th>Price</th>
+                                <th><strong>ID</strong></th>
+                                <th><strong>ProductName</strong></th>
+                                <th><strong>Category</strong></th>
+                                <th><strong>Description</strong></th>
+                                <th><strong>Price</strong></th>
                             </thead>
                             <tbody>
                                 @foreach ($products as $product)
