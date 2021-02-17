@@ -3,6 +3,7 @@
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AproductsController;
@@ -38,6 +39,7 @@ Route::get('/add-to-cart/{id}', [DemoController::class, 'getAddToCart']);
 Route::resource('/checkout', CheckoutController::class);
 
 Route::resource('/contact', MessagesController::class);
+Route::resource('/about', AboutController::class);
 
 Route::group(['middleware' => ['auth', 'isAdmin']],function(){
     Route::get('/admin', function () {
