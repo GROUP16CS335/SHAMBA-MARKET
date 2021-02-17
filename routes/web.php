@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth', 'isAdmin']],function(){
 
     Route::resource('/a-orders', AordersController::class);
 
-    Route::get('/admin-profile', [App\Http\Controllers\UsersController::class, 'adminProfile'])->name('admin-profile');
+    Route::get('/admin-profile/{id}', [App\Http\Controllers\UsersController::class, 'adminProfile'])->name('admin-profile');
 
 
 });
@@ -59,7 +59,7 @@ Route::group(['middleware' => ['auth', 'isVendor']],function(){
         return view('vendor.dashboard');
     });
 
-    Route::get('/vendor-profile', [App\Http\Controllers\UsersController::class, 'vendorProfile']);
+    Route::get('/vendor-profile/{id}', [App\Http\Controllers\UsersController::class, 'vendorProfile']);
 
     Route::resource('/products', ProductsController::class);
 

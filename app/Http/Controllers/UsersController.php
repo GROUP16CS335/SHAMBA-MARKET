@@ -99,13 +99,36 @@ class UsersController extends Controller
     public function vendorProfile($id)
     {
         $id = auth()->user()->id;
-        $user = User::find($id)->where('id', $id);
+        $user = User::find($id);
         return view('vendor.profile')->with('user', $user);
     }
 
-    /*public function adminProfile($id)
+    public function adminProfile($id)
     {
-        $user = User::find($id)->where('id', auth()->user()->id);
-        return view('vendor.profile')->with('user', $user);
-    }*/
+        $id = auth()->user()->id;
+        $user = User::find($id);
+        return view('admin.profile')->with('user', $user);
+    }
+
+    public function admin_update_profile(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        $user->save();
+
+        return redirect('/admin-profile')->with('status', 'Profile updated');
+    }
+
+    public function vendor_update_profile(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        $user->save();
+
+        return redirect('/vendor-profile')->with('status', 'Profile updated');
+    }
 }

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-body">
-            <form action="{{route('users.update', $user->id)}}" method="POST">
+            <form action="{{route('users.vendor_update_profile', $user->id)}}" method="POST">
                 {{ csrf_field() }}
                 @method('PATCH')
                     <div class="form-group row">
