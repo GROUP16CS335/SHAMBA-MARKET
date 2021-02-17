@@ -14,6 +14,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     <link href="{{ asset('css/custom1.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/nicepage.css')}}" media="screen">
+    <link rel="stylesheet" href="{{ asset('css/Home.css')}}" media="screen">
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
