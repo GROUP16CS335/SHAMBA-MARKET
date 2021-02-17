@@ -15,7 +15,7 @@ class CreateOrderDetailsTable extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->string('order_id');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');

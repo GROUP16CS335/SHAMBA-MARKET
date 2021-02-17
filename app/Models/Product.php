@@ -13,6 +13,12 @@ class Product extends Model
         return $this->hasOne(User::class);
     }
 
+    public function orders(){
+        return $this->belongsToMany(Oder::class,'order_product')->withPivot('qty');
+    }
+
+
+
     protected $fillable = ["name", "file_path", "created_at", "updated_at"];
 
 }

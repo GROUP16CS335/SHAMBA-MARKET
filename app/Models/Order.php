@@ -11,10 +11,19 @@ class Order extends Model
 
     public function order_detail(){
 
-        return $this->hasMany(OrderDetails::class);
+        return $this->hasOne(OrderDetails::class);
     }
 
-    public function order_price(){
-        return $this->hasOne(OrderPrices::class);
+    /*public function order_item(){
+        return $this->hasMany(OderItem::class);
+    }*/
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
+
+    public function products(){
+        return $this->belongsToMany(Product::class,'order_product')->withPivot('qty');
+    }
+
 }

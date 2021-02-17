@@ -17,7 +17,8 @@
                             <thead>
                                 <th>ID</th>
                                 <th>UserID</th>
-                                <th>Total Price</th>
+                                <th>Order Items</th>
+                                <th>Total Quantity</th>
                                 <th>Action</th>
                             </thead>
                             <tbody>
@@ -25,7 +26,19 @@
                                     <tr>
                                     <td>{{$order->id}}</td>
                                     <td>{{$order->user_id}}</td>
-                                    <td>{{$order->price * $order->qty}}</td>
+                                    <td>
+                                         @foreach($order->products as $product)
+                                          <span class="badge badge-primary">{{$product->pname}}</span>
+                                         @endforeach
+
+                                    </td>
+                                    <td>
+                                        @foreach($order->products as $product)
+                                            {{$total = $product->price * $product->pivot->qty
+                                            }}
+                                            {{$total += $total}}
+                                        @endforeach
+                                    </td>
                                     <td>
                                     <a href="{{ url('a-orders/'.$order->id) }}" class="btn btn-success btn-sm">VIEW</a>
                                     </td>

@@ -9,7 +9,9 @@ class OrderDetails extends Model
 {
     use HasFactory;
 
-    public function order_detail(){
-        return $this->hasOne(OrderDetails::class);
+    public function order(){
+        return $this->belongsTo(Order::class);
     }
+
+    
 }
