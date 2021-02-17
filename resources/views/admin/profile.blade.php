@@ -3,6 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="col-md-12">
             <div class="card-body">
             <form action="{{route('users.update', $user->id)}}" method="POST">

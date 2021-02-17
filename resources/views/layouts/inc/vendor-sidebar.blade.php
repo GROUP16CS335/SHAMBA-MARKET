@@ -6,7 +6,7 @@
         <i class="fa fa-pie-chart mr-3"></i>SHAMBA-MARKET
     </a>
 
-    <a href="#" class="list-group-item list-group-item-action waves-effect">
+    <a href="{{url('v-orders')}}" class="list-group-item list-group-item-action waves-effect">
         <i class="fa fa-money mr-3"></i>Orders</a>
 
     <a href="{{url('products')}}" class="list-group-item list-group-item-action waves-effect">

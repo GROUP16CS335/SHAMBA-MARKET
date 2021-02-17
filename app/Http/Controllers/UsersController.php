@@ -73,13 +73,19 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->role_as = $request->input('roles');
+        if($user->role_as == 'admin'){
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->save();
+        }
+        else{
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->role_as = $request->input('roles');
+            $user->save();
+        }
 
-        $user->save();
-
-        return redirect('/users')->with('status', 'Role updated');
+        return redirect('/users')->with('status', 'Updated');
     }
 
     /**
@@ -121,14 +127,4 @@ class UsersController extends Controller
         return redirect('/admin-profile')->with('status', 'Profile updated');
     }
 
-    public function vendor_update_profile(Request $request, $id)
-    {
-        $user = User::find($id);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-
-        $user->save();
-
-        return redirect('/vendor-profile')->with('status', 'Profile updated');
-    }
 }

@@ -25,9 +25,9 @@
                         <div class="col-sm-12">
                             <select name="roles" id="" class="form-control form-inline">
                                 <option value="">--Select role--</option>
-                                <option value="admin">Admin</option>
-                                <option value="user">User</option>
-                                <option value="vendor">Vendor</option>
+                                <option {{$user->role_as=='admin' ? 'selected':''}} value="admin">Admin</option>
+                                <option {{$user->role_as=='user' ? 'selected':''}} value="user">User</option>
+                                <option {{$user->role_as=='vendor' ? 'selected':''}} value="vendor">Vendor</option>
                             </select>
                         </div>
                         </div>

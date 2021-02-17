@@ -10,6 +10,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\MainViewController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\AordersController;
+use App\Http\Controllers\VordersController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,21 +60,13 @@ Route::group(['middleware' => ['auth', 'isVendor']],function(){
         return view('vendor.dashboard');
     });
 
+    Route::resource('/v-orders', VordersController::class);
+
     Route::get('/vendor-profile/{id}', [App\Http\Controllers\UsersController::class, 'vendorProfile']);
 
     Route::resource('/products', ProductsController::class);
 
-    Route::get('/deliveryInf', function () {
-        return view('frontend.support.deliveryInf');
-    });
-
-    Route::get('/privacyPolicy', function () {
-        return view('frontend.support.privacyPolicy');
-    });
-
-    Route::get('/termsCondition', function () {
-        return view('frontend.support.termsCondition');
-    });
+    Route::resource('/vendors', VendorController::class);
 
     Route::get('/add-products', function () {
         return view('vendor.products.add');

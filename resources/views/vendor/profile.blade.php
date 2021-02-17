@@ -3,9 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="col-md-12">
             <div class="card-body">
-            <form action="{{route('users.vendor_update_profile', $user->id)}}" method="POST">
+            <form action="{{route('vendors.update',auth()->user()->id)}}" method="POST">
                 {{ csrf_field() }}
                 @method('PATCH')
                     <div class="form-group row">
