@@ -62,7 +62,11 @@
                         <h3>Order summary</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
+<<<<<<< HEAD
+                            <div class="ml-auto font-weight-bold">{{$totalPrice ?? ''}} /=</div>
+=======
                             <div class="ml-auto font-weight-bold">{{number_format($totalPrice)}} Tsh</div>
+>>>>>>> d7cec551e147d82741316737ba5471bf8cccdb58
                         </div>
                         <div class="d-flex">
                             <h4>Discount</h4>
@@ -84,7 +88,11 @@
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Grand Total</h5>
+<<<<<<< HEAD
+                            <div class="ml-auto h5"> {{$totalPrice ?? ''}} /=</div>
+=======
                             <div class="ml-auto h5"> {{number_format($totalPrice)}} /=</div>
+>>>>>>> d7cec551e147d82741316737ba5471bf8cccdb58
                         </div>
                         <hr> </div>
                 </div>

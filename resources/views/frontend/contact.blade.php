@@ -37,6 +37,7 @@
                      <select name="service" id="" class="form-control">
                          <option value="">--Select service---</option>
                          <option value="vendor">Vendor</option>
+                         <option value="vendor">Customer</option>
                      </select>
                     </div>
                   </div>
