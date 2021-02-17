@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetails;
-use App\Models\OrderPrices;
+use App\Models\OrderProduct;
 use App\Models\User;
 use App\Models\Product;
+
 
 class CheckoutController extends Controller
 {
@@ -64,38 +65,43 @@ class CheckoutController extends Controller
         }
         else {
 
-            $orderDetail = new OrderDetails;
-            $orderDetail->user_id=auth()->user()->id;
-            $orderDetail->firstname = $request -> input('fname');
-            $orderDetail->lastname = $request -> input('lname');
-            $orderDetail->email = $request -> input('email');
-            $orderDetail->phone = $request -> input('phone');
-            $orderDetail->address1 = $request -> input('address1');
-            $orderDetail->address2 = $request -> input('address2');
-            $orderDetail->country = $request -> input('country');
-            $orderDetail->region = $request -> input('region');
-            $orderDetail->district = $request -> input('district');
-            $orderDetail->pay_method = $request -> input('paymentMethod');
-            $orderDetail->save();
-
 
             $oldCart = Session::get('cart');
             $cart = new Cart($oldCart);
             if (Session::has('cart')) {
+                $order = new Order;
+                $order->user_id = auth()->user()->id;
+                $order->save();
+
                 foreach ($cart->items as $product) {
-                    $order = new Order;
-                    $order->user_id = auth()->user()->id;
-                    $order->item_id =  $product['item']->id;
-                    $order->price =  $product['item']->price ;
-                    $order -> qty = $product['qty'];
-                    $order->save();
+                    $order_item = new OrderProduct;
+                    $order_item -> order_id = $order->id;
+                    $order_item->product_id = $product['item']->id;
+                    $order_item -> qty = $product['qty'];
+                    $order_item->save();
                 }
+
+                $orderDetail = new OrderDetails;
+                $orderDetail->order_id= $order->id;
+                $orderDetail->firstname = $request -> input('fname');
+                $orderDetail->lastname = $request -> input('lname');
+                $orderDetail->email = $request -> input('email');
+                $orderDetail->phone = $request -> input('phone');
+                $orderDetail->address1 = $request -> input('address1');
+                $orderDetail->address2 = $request -> input('address2');
+                $orderDetail->country = $request -> input('country');
+                $orderDetail->region = $request -> input('region');
+                $orderDetail->district = $request -> input('district');
+                $orderDetail->pay_method = $request -> input('paymentMethod');
+                $orderDetail->save();
 
                 //$order_price = new OrderPrices;
                 //$order_price ->user_id = auth()->user()->id;
                 //$order_price->order_id = Order::get('id')->where('user_id', auth()->user()->id);
                 //$order_price->grand_total = $cart->totalPrice;
                 //$order_price->save();
+
+
             }
 
             Session::forget('cart');
