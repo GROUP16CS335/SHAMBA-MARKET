@@ -1,5 +1,5 @@
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light ">
     <div class="container-fluid">
 
       <!-- Brand -->

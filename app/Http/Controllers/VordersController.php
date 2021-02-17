@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Order;
+use App\Models\OrderDetails;
+use App\Models\OderItem;
 
-class VendorController extends Controller
+
+class VordersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,10 @@ class VendorController extends Controller
      */
     public function index()
     {
-        $user = User::all()->where('id', auth()->user()->id);
-        return view('vendor.profile')->with('user', $user);
+        $orders = Order::all();
+        $orderDetails = OrderDetails::all();
+        $oder= Order::all();
+        return view('vendor.orders.index')->with('orders', $orders);
     }
 
     /**
@@ -47,7 +52,8 @@ class VendorController extends Controller
      */
     public function show($id)
     {
-
+        $order= Order::find($id);
+        return view('vendor.orders.show')->with('order', $order);
     }
 
     /**
@@ -70,14 +76,7 @@ class VendorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        if($user->role_as == 'vendor'){
-            $user->name = $request->input('name');
-            $user->email = $request->input('email');
-            $user->save();
-        }
-
-        return redirect('/vendor-profile/'.\Auth::id())->with('status', 'Updated');
+        //
     }
 
     /**
@@ -89,10 +88,5 @@ class VendorController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function vendorProfile(Request $request, $id)
-    {
-
     }
 }
