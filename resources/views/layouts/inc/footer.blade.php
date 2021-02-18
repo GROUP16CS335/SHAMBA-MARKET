@@ -7,11 +7,7 @@
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-widget">
                         <h4>About SHAMBA-MARKET</h4>
-                        <p>Shamba Market is a web-based application that helps to connect between the farmers and buyers/suppliers.
-                             This web-based application deals more on selling of agriculture product,
-                            looking for the market of different agriculture product like organic food,
-                            providing information about the price fluctuation on different crops and also to
-                            solve different problem that facing different farmers in agricultural sectors</p>
+                        <p>Shamba Market this is an online website which enable small farmers to sell their crops without the pricing of the middle men </p>
                         </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
