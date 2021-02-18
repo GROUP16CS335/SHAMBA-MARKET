@@ -16,7 +16,7 @@
     <link href="{{ asset('css/custom1.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/nicepage.css')}}" media="screen">
     <link rel="stylesheet" href="{{ asset('css/Home.css')}}" media="screen">
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Site CSS -->
@@ -25,12 +25,18 @@
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+      <!-- Styles -->
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+      <link href="{{ asset('css/custom_admin.css') }}" rel="stylesheet">
 
 </head>
 <body>
 
     @include('layouts.inc.navbar')
     <div>
+        <br>
+        <br>
         @yield('content')
     </div>
     <br>

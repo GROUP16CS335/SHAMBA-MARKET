@@ -54,7 +54,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn hvr-hover" id="submit">
+                                <button type="submit" class="btn ml-auto btn btn-primary" id="submit">
                                     {{ __('Login') }}
                                 </button>
 
