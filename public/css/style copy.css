@@ -728,7 +728,7 @@
 }
  .main-header.fixed-menu {
      padding: 0px;
-     box-shadow: 0 0 8px 0 rgba(0,0,0,.12);
+     box-shadow: 0 0 8px 0 rgba(253, 249, 249, 0.12);
      border-radius: 0;
 }
  .top-search .input-group-addon{
@@ -758,7 +758,7 @@
      font-size: 40px;
 }
  .slides-navigation a:hover {
-     background: #000000;
+     background: #f5f2f2;
 }
  .cover-slides .container{
      height: 100%;
@@ -774,13 +774,13 @@
      height: 100%;
 }
  .overlay-background {
-     background: rgb(0, 0, 0);
+     background: rgb(250, 249, 249);
      position: absolute;
      height: 100%;
      width: 100%;
      left: 0;
      top: 0;
-     opacity: 0.9;
+     opacity: 0.2;
 }
  .cover-slides h1{
      font-family: 'Poppins', sans-serif;
