@@ -49,7 +49,7 @@
               <h2 class="u-custom-font u-font-playfair-display u-text u-text-1">ABOUT US</h2>
               <p class="u-text u-text-2">Shamba Market is a web-based application that helps to connect between the farmers and buyers/suppliers.
                   This web-based application deals more on selling of agriculture products,
-                  looking for the market of different agriculture product like organic food, providing information about the price fluctuation on different crops and also to solve different problem that facing different farmers in agricultural sectors</p>
+                  looking for the market of different agriculture products like organic food, providing information about the price fluctuation on different crops and also to solve different problem that facing different farmers in agricultural sectors</p>
             </div>
           </div>
         </div>
