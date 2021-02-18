@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> Shamba Market</strong></h1>
-                        <p><a class="btn hvr-hover" href="#">Shop Now</a></p>
+                        <p><a class="btn hvr-hover" href="">Shop Now</a></p>
                     </div>
                 </div>
             </div>
