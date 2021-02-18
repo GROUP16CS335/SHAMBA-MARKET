@@ -40,14 +40,16 @@
           <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-23 u-layout-cell-1">
             <div class="u-container-layout u-container-layout-1">
               <div class="u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="846">
-                  
+
               </div>
             </div>
           </div>
           <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-37 u-layout-cell-2">
             <div class="u-container-layout u-container-layout-2">
-              <h2 class="u-custom-font u-font-playfair-display u-text u-text-1">About Us</h2>
-              <p class="u-text u-text-2">Shamba Market is a web-based application that helps to connect between the farmers and buyers/suppliers. This web-based application deals more on selling of agriculture product, looking for the market of different agriculture product like organic food, providing information about the price fluctuation on different crops and also to solve different problem that facing different farmers in agricultural sectors</p>
+              <h2 class="u-custom-font u-font-playfair-display u-text u-text-1">ABOUT US</h2>
+              <p class="u-text u-text-2">Shamba Market is a web-based application that helps to connect between the farmers and buyers/suppliers.
+                  This web-based application deals more on selling of agriculture product,
+                  looking for the market of different agriculture product like organic food, providing information about the price fluctuation on different crops and also to solve different problem that facing different farmers in agricultural sectors</p>
             </div>
           </div>
         </div>
