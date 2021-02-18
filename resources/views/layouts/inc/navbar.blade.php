@@ -8,7 +8,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars"></i>
         </button>
-            <a class="navbar-brand" href="/"><h1><strong>SHAMBA-MARKET</strong></h1></a>
+            <a class="navbar-brand" href="/"><h3><strong>SHAMBA-MARKET</strong></h3></a>
         </div>
         <!-- End Header Navigation -->
 
