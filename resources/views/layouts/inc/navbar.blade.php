@@ -12,7 +12,7 @@
         </div>
         <!-- End Header Navigation -->
 
-<<<<<<< HEAD
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-fixed-top" id="navbar-menu">
         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
@@ -28,26 +28,7 @@
                 </a>
             </li>
             <li>
-                @if(Auth::guest())
-                <li class="nav-item ml-md-3">
-                <a class="btn btn-outline-primary" href="/login"><i class="fa fa-user"></i> Log In / Register</a>
-=======
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-fixed-top" id="navbar-menu">
-            <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/cart">
-                        <i class="fa fas-shopping-cart"></i>
-                        <span class="badge badge-danger">
-                            {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}
-                        </span>
-                    </a>
->>>>>>> d7cec551e147d82741316737ba5471bf8cccdb58
-                </li>
-                <li>
+        
                     @if(Auth::guest())
                     <li class="nav-item ml-md-3">
                     <a class="btn btn-outline-primary" href="/login"><i class="fa fa-user"></i> Log In / Register</a>
