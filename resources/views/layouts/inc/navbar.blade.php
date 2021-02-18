@@ -2,7 +2,7 @@
 <header class="main-header">
     <!-- Start Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-default bootsnav navbar-fixed-top">
-    <img src="{{asset('appimages/logo.png')}}" style="height:80px;" alt="">
+    <img src="{{asset('appimages/logo.png')}}" style="height:70px;" alt="">
     <div class="container">
         <!-- Start Header Navigation -->
         <div class="navbar-header">
@@ -23,7 +23,7 @@
                         <i class="fa fa-shopping-cart"></i>
                         @if (Session::has('cart'))
                             <span class="badge badge-danger">
-                                {{Session::has('cartegories') ? Session::get('cart')->totalQty : ''}}
+                                {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}
                             </span>
                         @endif
                     </a>
