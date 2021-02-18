@@ -23,26 +23,28 @@
                             </thead>
                             <tbody>
                                 @foreach ($orders as $order)
-                                    <tr>
-                                    <td>{{$order->id}}</td>
-                                    <td>{{$order->user_id}}</td>
-                                    <td>
-                                         @foreach($order->products as $product)
-                                          <span class="badge badge-primary">{{$product->pname}}</span>
-                                         @endforeach
+                                    @foreach ($order->products as $product)
+                                        @if ($product->user->id == \Auth::user()->id)
+                                            <tr>
+                                                <td>{{$order->id}}</td>
+                                                <td>{{$order->user_id}}</td>
+                                                <td>
+                                                <span class="badge badge-primary">{{$product->user->name}}</span>
 
-                                    </td>
-                                    <td>
-                                        @foreach($order->products as $product)
-                                            {{$total = $product->price * $product->pivot->qty
-                                            }}
-                                            {{$total += $total}}
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                    <a href="{{ url('v-orders/'.$order->id) }}" class="btn btn-success btn-sm">VIEW</a>
-                                    </td>
-                                    </tr>
+                                                </td>
+                                                    <td>
+                                                        @foreach($order->products as $product)
+                                                            {{$total = $product->price * $product->pivot->qty
+                                                            }}
+                                                            {{$total += $total}}
+                                                        @endforeach
+                                                    </td>
+                                                <td>
+                                                <a href="{{ url('v-orders/'.$order->id) }}" class="btn btn-success btn-sm">VIEW</a>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                    @endforeach
                                 @endforeach
                             </tbody>
                         </table>
