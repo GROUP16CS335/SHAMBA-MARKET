@@ -19,14 +19,17 @@ class UsersTableSeeder extends Seeder
             'email'=>'admin@gmail.com',
             'password'=>password_hash('admin', PASSWORD_BCRYPT),
             'role_as'=>'admin'
-        ],[
+        ]);
+
+        User::create([
             'name'=>'Vendor',
-            'email'=>'vendor@vendor.com',
+            'email'=>'vendor@gmail.com',
             'password'=>password_hash('vendor', PASSWORD_BCRYPT),
             'role_as'=>'vendor'
-        ],[
+        ]);
+        User::create([
             'name'=>'User',
-            'email'=>'user@user.com',
+            'email'=>'user@gmail.com',
             'password'=>password_hash('user', PASSWORD_BCRYPT),
             'role_as'=>'user'
         ]);

@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h1><strong>{{ __('Register') }}</strong></h1></div>
+                <div class="card-header"><h3><strong><center>{{ __('REGISTER') }}</center></strong></h3></div>
 
                 <div class="card-body">
                     <form method="POST" class="needs-validation" action="{{ route('register') }}">
@@ -64,7 +64,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn hvr-hover" id="submit">
+                                <button type="submit" class="btn ml-auto btn btn-primary" id="submit">
                                     {{ __('Register') }}
                                 </button>
                             </div>

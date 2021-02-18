@@ -28,14 +28,14 @@
 @import url(jquery-ui.css);
 @import url(nice-select.css);
 @import url(baguetteBox.min.css);
-
+@import url(custom1.css);
 /*------------------------------------------------------------------
     SKELETON
 -------------------------------------------------------------------*/
  body {
      color: #666666;
      font-size: 15px;
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
      line-height: 1.80857;
 }
  a {
@@ -2189,7 +2189,7 @@
 }
  .new-account-login h5 {
      font-size: 18px;
-     color: #1111111;
+     color: #111111;
      font-weight: 600;
 }
  .new-account-login h5 a:hover{

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendor Panel</title>
+    <title>Vendor-Panel</title>
      <!-- Scripts -->
      <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -25,8 +25,12 @@
     </header>
    <!--Main Navigation-->
 
-    <main class="pt-5 mx-lg-5">
-        @yield('content')
+    <main>
+        <br>
+        <div class="container">
+            @yield('content')
+        </div>
+
     </main>
 </body>
 <script type="text/javascript" src="{{ asset('js/custom.js')}}"></script>

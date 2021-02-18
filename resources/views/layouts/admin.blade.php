@@ -27,9 +27,13 @@
     </header>
    <!--Main Navigation-->
 
-    <main class="pt-5 mx-lg-5">
+   <main>
+    <br>
+    <div class="container">
         @yield('content')
-    </main>
+    </div>
+
+</main>
 </body>
 <script type="text/javascript" src="{{ asset('js/custom.js')}}"></script>
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>

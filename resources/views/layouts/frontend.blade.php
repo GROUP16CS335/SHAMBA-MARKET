@@ -2,15 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>SHAMBA-MARKET</title>
-    
      <!-- Scripts -->
      <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -21,6 +14,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css')}}" rel="stylesheet">
     <link href="{{ asset('css/custom1.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/nicepage.css')}}" media="screen">
+    <link rel="stylesheet" href="{{ asset('css/Home.css')}}" media="screen">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -30,12 +25,18 @@
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+      <!-- Styles -->
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+      <link href="{{ asset('css/custom_admin.css') }}" rel="stylesheet">
 
 </head>
 <body>
 
     @include('layouts.inc.navbar')
     <div>
+        <br>
+        <br>
         @yield('content')
     </div>
     <br>

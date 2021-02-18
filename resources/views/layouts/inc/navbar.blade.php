@@ -1,16 +1,17 @@
- <!-- Start Main Top -->
- <header class="main-header">
+<!-- Start Main Top -->
+<header class="main-header">
     <!-- Start Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-default bootsnav navbar-fixed-top">
+    <img src="{{asset('appimages/logo.png')}}" style="height:70px;" alt="">
     <div class="container">
         <!-- Start Header Navigation -->
         <div class="navbar-header">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars"></i>
-        </button>
-            <a class="navbar-brand" href="/"><h1><strong>SHAMBA-MARKET</strong></h1></a>
+            </button>
         </div>
         <!-- End Header Navigation -->
+
 
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,12 +30,14 @@
             </li>
             <li>
         
+
+        
+
                     @if(Auth::guest())
                     <li class="nav-item ml-md-3">
                     <a class="btn btn-outline-primary" href="/login"><i class="fa fa-user"></i> Log In / Register</a>
                     </li>
                     @else
-                    <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
