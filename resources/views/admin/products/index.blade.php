@@ -13,6 +13,7 @@
                             </div>
                         @endif
                         <h4>Products</h4>
+                        <!--table to display products-->
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <th><strong>ID</strong></th>

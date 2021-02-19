@@ -7,6 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card-body">
+                    <!--form to edit user in system-->
                 <form action="{{route('users.update', $user->id)}}" method="POST">
                     {{ csrf_field() }}
                     @method('PATCH')
