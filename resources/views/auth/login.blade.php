@@ -9,6 +9,7 @@
                 <div class="card-header "><h3><strong><center>{{ __('LOGIN') }}</center></strong></h3></div>
 
                 <div class="card-body">
+                    <!--login form-->
                     <form method="POST" class="needs-validation" action="{{ route('login') }}">
                         @csrf
 

@@ -9,6 +9,7 @@
                 <div class="card-header"><h3><strong><center>{{ __('REGISTER') }}</center></strong></h3></div>
 
                 <div class="card-body">
+                    <!--register form for the new users in system-->
                     <form method="POST" class="needs-validation" action="{{ route('register') }}">
                         @csrf
 
