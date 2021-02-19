@@ -12,23 +12,27 @@
         </div>
         <!-- End Header Navigation -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-fixed-top" id="navbar-menu">
-            <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                <li class="nav-item active"><a class="nav-link" href="/"><i class="fa fa-home"></i> Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about"><i class="fa fa-address-card" aria-hidden="true"></i> About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contact"><i class="fa fa-envelope" aria-hidden="true"></i> Contact Us</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/cart">
-                        <i class="fa fa-shopping-cart"></i>
-                        @if (Session::has('cart'))
-                            <span class="badge badge-danger">
-                                {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}
-                            </span>
-                        @endif
-                    </a>
-                </li>
-                <li>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-fixed-top" id="navbar-menu">
+        <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="badge badge-danger">
+                        {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}
+                    </span>
+                </a>
+            </li>
+            <li>
+        
+
+        
+
                     @if(Auth::guest())
                     <li class="nav-item ml-md-3">
                     <a class="btn btn-outline-primary" href="/login"><i class="fa fa-user"></i> Log In / Register</a>
