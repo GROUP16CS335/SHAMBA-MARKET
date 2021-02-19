@@ -23,15 +23,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="/cart">
                     <i class="fa fa-shopping-cart"></i>
+                    
                     <span class="badge badge-danger">
                         {{Session::has('cart') ? Session::get('cart')->totalQty : ''}}
                     </span>
                 </a>
             </li>
             <li>
-        
-
-        
 
                     @if(Auth::guest())
                     <li class="nav-item ml-md-3">
