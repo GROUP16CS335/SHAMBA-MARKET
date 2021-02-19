@@ -150,7 +150,7 @@
                                 </div>
                                 <hr> </div>
                         </div>
-                        <div class="col-12 d-flex shopping-box"> <button type="submit"  class="ml-auto btn hvr-hover">Place Order</button> </div>
+                        <div class="col-12 d-flex shopping-box"> <button type="submit"  class="btn btn-primary ml-auto btn hvr-hover">Place Order</button> </div>
                     </form>
                     </div>
                 </div>
