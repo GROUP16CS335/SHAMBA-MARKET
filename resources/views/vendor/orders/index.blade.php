@@ -15,7 +15,7 @@
                         <h4>Orders</h4>
                         <table class="table table-bordered table-striped">
                             <thead>
-                                <th><strong>Order ID</strong></th>
+                                <th><strong></th>
                                 <th><strong>UserID</strong></th>
                                 <th><strong>Order Items</strong></th>
                                 <th><strong>Total Price</strong></th>
@@ -23,27 +23,28 @@
                             </thead>
                             <tbody>
                                 @foreach ($orders as $order)
-                                    <tr>
-                                        <td>{{$order->id}}</td>
-                                        <td>{{$order->user_id}}</td>
-                                        <td>
-
-                                        @foreach ($order->products as $product)
+                                    @foreach ($order->products as $product)
                                         @if ($product->user->id == \Auth::user()->id)
-                                        <span class="badge badge-primary">{{$product->pname}}</span>
+                                            <tr>
+                                                <td>{{$order->id}}</td>
+                                                <td>{{$order->user_id}}</td>
+                                                <td>
+                                                <span class="badge badge-primary">{{$product->user->name}}</span>
+
+                                                </td>
+                                                    <td>
+                                                        @foreach($order->products as $product)
+                                                            {{$total = $product->price * $product->pivot->qty
+                                                            }}
+                                                            {{$total += $total}}
+                                                        @endforeach
+                                                    </td>
+                                                <td>
+                                                <a href="{{ url('v-orders/'.$order->id) }}" class="btn btn-success btn-sm">VIEW</a>
+                                                </td>
+                                            </tr>
                                         @endif
-                                        @endforeach
-                                        </td>
-                                            <td>
-                                                @foreach($order->products as $product)
-                                                    {{$product->price * $product->pivot->qty
-                                                    }}
-                                                @endforeach
-                                            </td>
-                                        <td>
-                                        <a href="{{ url('v-orders/'.$order->id) }}" class="btn btn-success btn-sm">VIEW</a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 @endforeach
                             </tbody>
                         </table>

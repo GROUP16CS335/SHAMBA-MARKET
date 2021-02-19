@@ -20,15 +20,13 @@
 
                     <tbody>
                         @foreach ($order->products as $product)
-                                @if ($product->user->id == \Auth::user()->id)
-                                    <tr>
-                                    <td>{{\App\Models\User::find($product->id)->id}}</td>
-                                    <td>{{$product->pname}}</td>
-                                    <td>{{$product->pcat}}</td>
-                                    <td>{{$product->price}}</td>
-                                    <td>{{$product->pivot->qty}}</td>
-                                    </tr>
-                                @endif
+                            <tr>
+                            <td>{{\App\Models\User::find($product->vid)->id}}</td>
+                            <td>{{$product->pname}}</td>
+                            <td>{{$product->pcat}}</td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->pivot->qty}}</td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
