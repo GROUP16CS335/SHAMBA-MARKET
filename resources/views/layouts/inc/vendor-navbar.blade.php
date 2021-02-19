@@ -4,7 +4,7 @@
 
       <!-- Brand -->
       <a class="navbar-brand waves-effect" href="#" target="_blank">
-        <strong class="blue-text">VENDOR</strong>
+        <strong class="blue-text">MNUNUZI</strong>
       </a>
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
               {{ Auth::user()->name }}
