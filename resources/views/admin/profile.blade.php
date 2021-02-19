@@ -12,6 +12,7 @@
             @endif
             <div class="col-md-12">
                 <div class="card-body">
+                    <!--form for admin to edit profile-->
                 <form action="{{route('users.update', $user->id)}}" method="POST">
                     {{ csrf_field() }}
                     @method('PATCH')

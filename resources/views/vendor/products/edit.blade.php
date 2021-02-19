@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.vendor')
 
 @section('content')
 <div class="card">
@@ -7,7 +7,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-body">
-                        <!--form to edit product-->
                         <form action="{{route('a-products.update', $product->id)}}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             @method('PATCH')

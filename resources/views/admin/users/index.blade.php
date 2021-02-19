@@ -14,6 +14,7 @@
                         </div>
                     @endif
                     <h4>Registered Users</h4>
+                    <!--table to display all users to admin panel-->
                     <table class="table table-bordered table-striped">
                         <thead>
                             <th>ID</th>

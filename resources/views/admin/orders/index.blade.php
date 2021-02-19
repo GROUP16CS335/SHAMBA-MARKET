@@ -12,6 +12,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        <!--table to display orders to admin panel-->
                         <h4>Orders</h4>
                         <table class="table table-bordered table-striped">
                             <thead>

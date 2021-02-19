@@ -7,6 +7,7 @@
             <h3>Product Details</h3>
             <hr>
             <div class="form-row">
+              <!--table to display order details-->
                 <table class="table table-bordered table-striped">
                     <tr>
                         <thead>
@@ -47,6 +48,7 @@
             <br>
             <h3>Billing Address</h3>
             <hr>
+            <!--form to display orders details address-->
 
             <div class="form-row">
                 <div class="form-group col-md-6 input-sm">
