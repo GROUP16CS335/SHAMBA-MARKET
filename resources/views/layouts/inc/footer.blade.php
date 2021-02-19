@@ -28,13 +28,13 @@
                         <h4>Contact Us</h4>
                         <ul>
                             <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: CoICT, Kijitonyama <br>Dar es Salaam,<br> Tanzania</p>
+                                <p><i class="fa fa-map-marker"></i>Address: CoICT, Kijitonyama <br>Dar es Salaam,<br> Tanzania</p>
                             </li>
                             <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+255 719 64 1811</a></p>
+                                <p><i class="fa fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+255 719 64 1811</a></p>
                             </li>
                             <li>
-                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:@gmail.com">contactinfo@gmail.com</a></p>
+                                <p><i class="fa fa-envelope"></i>Email: <a href="mailto:@gmail.com">contactinfo@gmail.com</a></p>
                             </li>
                         </ul>
                     </div>
