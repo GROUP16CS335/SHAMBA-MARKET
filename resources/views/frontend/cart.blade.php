@@ -8,6 +8,7 @@
                 <div class="col-lg-12">
                     <div class="table-main table-responsive">
                         @if (Session::has('cart'))
+                        <!--this is the table whict display all the product in cart-->
                         <table class="table">
                             <thead>
                                 <tr>

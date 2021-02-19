@@ -9,6 +9,7 @@
                         <div class="title-left">
                             <h3>Billing address</h3>
                         </div>
+                        <!--this form is for the billing address of the buyer-->
                         <form action="{{route('checkout.store')}}" class="needs-validation" novalidate method="POST">
                             {{@csrf_field()}}
                             @method('POST')

@@ -13,6 +13,7 @@
           <div class="col-lg-6">
             <div class="contact-box ml-3 contact-form">
               <h1 class="font-weight-light mt-2">Contact Shamba-Market</h1>
+              <!--this form is for contact whith developer-->
               <form class="mt-4" method="POST">
                {{@csrf_field()}}
                @method('POST')

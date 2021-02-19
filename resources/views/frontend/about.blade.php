@@ -46,6 +46,7 @@
           </div>
           <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-37 u-layout-cell-2">
             <div class="u-container-layout u-container-layout-2">
+              <!--this is an overview of our project-->
               <h2 class="u-custom-font u-font-playfair-display u-text u-text-1">ABOUT US</h2>
               <p class="u-text u-text-2">Shamba-Market is a web-based application that helps to connect between the farmers and buyers/suppliers.
                   This web-based application deals more on selling of agriculture products,

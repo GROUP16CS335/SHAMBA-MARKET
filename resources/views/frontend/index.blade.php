@@ -24,6 +24,7 @@
 </div>
 <div class="container py-4">
     <div class="row">
+        <!--passing the all products in system for display to the users-->
         @foreach ($products as $product )
         <div class="col-lg-3 col-md-6 special-grid top-featured ">
             <div class="products-single fix">
